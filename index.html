@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Sailing Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="brand">MySailPortfolio</div>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About Me</a></li>
+        <li><a href="#career" class="nav-link">Career</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="section fade-in">
+      <h1>About Me</h1>
+      <p>Welcome! I’m passionate about tech and the ocean, blending waves and code.</p>
+      <img src="images/beach1.jpg" alt="Peaceful Beach" class="full-width-img" />
+    </section>
+
+    <section id="career" class="section career-section fade-in">
+      <h2>Career Timeline</h2>
+      <div class="timeline-container">
+        <svg id="water-path" viewBox="0 0 200 600" preserveAspectRatio="none" aria-hidden="true" class="water-svg">
+          <path id="wavePath" d="M50 0 q40 40 0 80 q-40 40 0 80 q40 40 0 80 q-40 40 0 80 q40 40 0 80"
+            fill="none" stroke="#5390d9" stroke-width="6" opacity="0.3" stroke-linecap="round" />
+        </svg>
+
+        <div id="sailboat" aria-label="Sailing boat" role="img" title="Sailing Boat">
+          <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 2 L12 62 L52 62 Z" fill="#e27d60" stroke="#a0522d" stroke-width="2" />
+            <rect x="29" y="15" width="6" height="20" fill="#7fc8f8" stroke="#2471a3" stroke-width="1.5" />
+          </svg>
+        </div>
+
+        <div class="timeline-entries">
+          <article class="entry" style="top: 10px;">
+            <h3>Junior Developer at Oceans Ltd</h3>
+            <time>2018 - 2019</time>
+            <p>Worked on marine data-focused web projects.</p>
+            <img src="images/career1.jpg" alt="Junior Developer" class="timeline-img" />
+          </article>
+          <article class="entry" style="top: 140px;">
+            <h3>Software Engineer at Sail Tech</h3>
+            <time>2019 - 2022</time>
+            <p>Developed cloud platforms with sailing weather API integration.</p>
+            <img src="images/career2.jpg" alt="Software Engineer" class="timeline-img" />
+          </article>
+          <article class="entry" style="top: 270px;">
+            <h3>Senior Developer at BlueWave</h3>
+            <time>2022 - Present</time>
+            <p>Leading the team building wearable health analytics for sailors.</p>
+            <img src="images/career3.jpg" alt="Senior Developer" class="timeline-img" />
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section fade-in">
+      <h2>Education</h2>
+      <ul>
+        <li>BSc Computer Science, XYZ University (2014 - 2018)</li>
+        <li>Certificate in Marine Technology, Sailing School (2020)</li>
+      </ul>
+      <img src="images/education.jpg" alt="Education" class="full-width-img" />
+    </section>
+
+    <section id="projects" class="section fade-in">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>SeaDataViz</strong>: Interactive ocean data visualizations.</li>
+        <li><strong>WearableSync</strong>: API platform for sailing health devices.</li>
+      </ul>
+      <img src="images/projects.jpg" alt="Projects Overview" class="full-width-img" />
+    </section>
+
+    <section id="skills" class="section fade-in">
+      <h2>Skills</h2>
+      <ul>
+        <li>JavaScript, React, Node.js</li>
+        <li>Data Visualization and UX Design</li>
+        <li>Cloud Infrastructure & DevOps</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section fade-in">
+      <h2>Contact</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Sailing Portfolio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
