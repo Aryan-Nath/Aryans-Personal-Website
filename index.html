@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Sailing Portfolio</title>
+  <title>Aryan Nath</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <div class="brand">MySailPortfolio</div>
+      <div class="brand">Aryan Nath</div>
       <ul class="nav-links">
         <li><a href="#about" class="nav-link">About Me</a></li>
         <li><a href="#career" class="nav-link">Career</a></li>
@@ -23,91 +23,147 @@
 
   <main>
     <section id="about" class="section fade-in">
-      <h1>About Me</h1>
-      <p>Welcome! I’m passionate about tech and the ocean, blending waves and code.</p>
+      <h2 class="section-title">About Me</h2>
+      <p>
+        Hi, I'm Aryan Nath.<br />
+        I'm currently majoring in Data Science at UC San Diego, specializing in Machine Learning and Artificial Intelligence. Passionate about systematic analysis, impactful research, and merging physiological and environmental data for better health outcomes. I love sailing, data-driven discovery, and creative writing.
+      </p>
       <img src="images/beach1.jpg" alt="Peaceful Beach" class="full-width-img" />
     </section>
 
-    <section id="career" class="section career-section fade-in">
-      <h2>Career Timeline</h2>
-      <div class="timeline-container">
-        <svg id="water-path" viewBox="0 0 200 600" preserveAspectRatio="none" aria-hidden="true" class="water-svg">
-          <path id="wavePath" d="M50 0 q40 40 0 80 q-40 40 0 80 q40 40 0 80 q-40 40 0 80 q40 40 0 80"
-            fill="none" stroke="#5390d9" stroke-width="6" opacity="0.3" stroke-linecap="round" />
+    <section id="career" class="section fade-in">
+      <h2 class="section-title">Career</h2>
+      <div class="career-timeline">
+        <svg
+          class="career-wave"
+          viewBox="0 0 60 620"
+          fill="none"
+          stroke-width="4"
+          stroke="#3a9ad9"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="careerWavePath"
+            d="M30 30 Q 40 65, 30 100 Q 20 135, 30 170 Q 40 205, 30 240 Q 20 275, 30 310 Q 40 345, 30 380 Q 20 415, 30 450"
+            fill="none"
+            stroke-linecap="round"
+          />
+          <!-- Dots on the path -->
+          <circle cx="30" cy="30" r="8" fill="#3a9ad9" stroke="#101f36" stroke-width="3" />
+          <circle cx="30" cy="170" r="8" fill="#3a9ad9" stroke="#101f36" stroke-width="3" />
+          <circle cx="30" cy="310" r="8" fill="#3a9ad9" stroke="#101f36" stroke-width="3" />
+          <circle cx="30" cy="450" r="8" fill="#3a9ad9" stroke="#101f36" stroke-width="3" />
         </svg>
 
-        <div id="sailboat" aria-label="Sailing boat" role="img" title="Sailing Boat">
-          <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-            <path d="M32 2 L12 62 L52 62 Z" fill="#e27d60" stroke="#a0522d" stroke-width="2" />
-            <rect x="29" y="15" width="6" height="20" fill="#7fc8f8" stroke="#2471a3" stroke-width="1.5" />
+        <div id="careerSailboat" aria-label="Sailing boat" role="img" title="Sailing Boat">
+          <svg
+            width="44"
+            height="44"
+            viewBox="0 0 44 44"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polygon
+              points="22,4 9,38 35,38"
+              fill="#e27d60"
+              stroke="#a0522d"
+              stroke-width="2"
+            />
+            <rect
+              x="19"
+              y="14"
+              width="6"
+              height="16"
+              fill="#7fc8f8"
+              stroke="#2471a3"
+              stroke-width="1.2"
+            />
           </svg>
         </div>
 
-        <div class="timeline-entries">
-          <article class="entry" style="top: 10px;">
-            <h3>Junior Developer at Oceans Ltd</h3>
-            <time>2018 - 2019</time>
-            <p>Worked on marine data-focused web projects.</p>
-            <img src="images/career1.jpg" alt="Junior Developer" class="timeline-img" />
-          </article>
-          <article class="entry" style="top: 140px;">
-            <h3>Software Engineer at Sail Tech</h3>
-            <time>2019 - 2022</time>
-            <p>Developed cloud platforms with sailing weather API integration.</p>
-            <img src="images/career2.jpg" alt="Software Engineer" class="timeline-img" />
-          </article>
-          <article class="entry" style="top: 270px;">
-            <h3>Senior Developer at BlueWave</h3>
-            <time>2022 - Present</time>
-            <p>Leading the team building wearable health analytics for sailors.</p>
-            <img src="images/career3.jpg" alt="Senior Developer" class="timeline-img" />
-          </article>
+        <div class="career-entries">
+          <div class="career-entry" data-index="0" style="top: 22px;">
+            <h3>Research Assistant — Knight Lab, UCSD</h3>
+            <span class="career-dates">Mar 2025 - Jun 2025</span>
+            <p>Screened 50+ studies on 16S rRNA; processed samples with QIIME2 & scikit‑bio; built Gut Microbiome database for Tree of Life project.</p>
+          </div>
+          <div class="career-entry" data-index="1" style="top: 142px;">
+            <h3>Junior Quantitative Analyst — Hedge Fund Club UCSD</h3>
+            <span class="career-dates">Jan 2025 - Present</span>
+            <p>Built investment thesis for $1M simulated portfolio; analyzed 50+ companies using 10-Ks and DCF valuations; used Monte Carlo simulations to optimize returns.</p>
+          </div>
+          <div class="career-entry" data-index="2" style="top: 262px;">
+            <h3>Quantitative Analyst — Sustainable Investment Group</h3>
+            <span class="career-dates">Mar 2025 - Present</span>
+            <p>Modeled NFLX returns with ARIMA+GARCH; linked ESG risks to valuation; presented buy-sell thesis with scenario analysis.</p>
+          </div>
+          <div class="career-entry" data-index="3" style="top: 382px;">
+            <h3>Member — Physical Sciences Cohort Program</h3>
+            <span class="career-dates">Sept 2024 - Present</span>
+            <p>Selected for honors cohort with PhD mentors; developed research proposals.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="education" class="section fade-in">
-      <h2>Education</h2>
+      <h2 class="section-title">Education</h2>
       <ul>
-        <li>BSc Computer Science, XYZ University (2014 - 2018)</li>
-        <li>Certificate in Marine Technology, Sailing School (2020)</li>
+        <li><strong>University of California, San Diego</strong><br/>
+          Bachelor of Science in Data Science (Machine Learning Track)<br/>
+          Provost Honors; GPA: 3.91/4.0; Expected Mar 2027
+        </li>
+        <li>Halıcıoğlu Data Science Institute Undergraduate Research Scholar (2025–2026)</li>
       </ul>
-      <img src="images/education.jpg" alt="Education" class="full-width-img" />
+      <img src="images/education.jpg" alt="UCSD campus" class="full-width-img" />
     </section>
 
     <section id="projects" class="section fade-in">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>SeaDataViz</strong>: Interactive ocean data visualizations.</li>
-        <li><strong>WearableSync</strong>: API platform for sailing health devices.</li>
-      </ul>
-      <img src="images/projects.jpg" alt="Projects Overview" class="full-width-img" />
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <h3>BioSync System</h3>
+          <p>Lead design of a platform syncing multimodal wearable data for health optimization.</p>
+        </div>
+        <div class="project-card">
+          <h3>Playlist to Podium</h3>
+          <p>Python pipeline cleaning 1.7M+ audio features; matched F1 driver profiles to user music.</p>
+        </div>
+        <div class="project-card">
+          <h3>Rise and Ruin</h3>
+          <p>Self-published historical fantasy novel available on Amazon.</p>
+        </div>
+      </div>
     </section>
 
     <section id="skills" class="section fade-in">
-      <h2>Skills</h2>
+      <h2 class="section-title">Skills</h2>
       <ul>
-        <li>JavaScript, React, Node.js</li>
-        <li>Data Visualization and UX Design</li>
-        <li>Cloud Infrastructure & DevOps</li>
+        <li>Python, Java, SQL</li>
+        <li>NumPy, Pandas, scikit-learn, PyTorch, XGBoost, Random Forests</li>
+        <li>Time Series Models: ARIMA, LSTM, TCN, GARCH</li>
+        <li>Contextual Bandits, Sequence Alignment, Fair Evaluation Splits</li>
+        <li>Research, Writing, Data Visualization</li>
       </ul>
     </section>
 
     <section id="contact" class="section fade-in">
-      <h2>Contact</h2>
+      <h2 class="section-title">Contact</h2>
       <form class="contact-form">
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
         <textarea placeholder="Your Message" rows="4" required></textarea>
         <button type="submit">Send</button>
       </form>
+      <div class="contact-links">
+        <a href="mailto:aryan.nath@gmail.com">aryan.nath@gmail.com</a> |
+        <a href="https://linkedin.com/in/aryannath" target="_blank">LinkedIn</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 My Sailing Portfolio</p>
+    <p>&copy; 2025 Aryan Nath</p>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

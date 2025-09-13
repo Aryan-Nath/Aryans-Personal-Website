@@ -1,38 +1,67 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const sailboat = document.getElementById("sailboat");
-  const path = document.getElementById("wavePath");
+  const sailboat = document.getElementById("careerSailboat");
+  const wavePath = document.getElementById("careerWavePath");
+  const entries = Array.from(document.querySelectorAll(".career-entry"));
   const careerSection = document.getElementById("career");
-  const navLinks = document.querySelectorAll(".nav-link");
-  const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute("href")));
 
-  const pathLength = path.getTotalLength();
+  const pathLen = wavePath.getTotalLength();
 
-  function positionSailboat() {
+  // Position entries aligned vertically on wave dots with slight vertical gap
+  const entryRatios = entries.map((_, i) => i / (entries.length - 1));
+  const pathPoints = entryRatios.map((r) => wavePath.getPointAtLength(r * pathLen));
+
+  entries.forEach((el, i) => {
+    // Apply a vertical spacing offset between entries for better visual separation
+    const verticalOffset = i * 8; // 8px spacing multiplier
+    el.style.top = pathPoints[i].y - el.offsetHeight / 2 + verticalOffset + "px";
+    el.style.left = "130px";
+  });
+
+  function updateSailboat() {
     const rect = careerSection.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
-    let progress = 0;
+    const minY = rect.top + window.scrollY;
+    const maxY = rect.bottom + window.scrollY - window.innerHeight / 4;
+    const scroll = Math.max(Math.min(window.scrollY + window.innerHeight / 2, maxY), minY);
+    const pct = (scroll - minY) / (maxY - minY);
+    const progress = Math.max(0, Math.min(1, pct || 0));
+    const pt = wavePath.getPointAtLength(progress * pathLen);
 
-    if (rect.top < viewportHeight && rect.bottom > 0) {
-      progress = Math.min(Math.max((viewportHeight - rect.top) / (viewportHeight + rect.height), 0), 1);
-    }
+    // Clamp sailboat vertical position between first and last dot Y
+    const clampedY = Math.min(Math.max(pt.y, pathPoints[0].y), pathPoints[pathPoints.length - 1].y);
 
-    const pointAtLength = path.getPointAtLength(progress * pathLength);
+    sailboat.style.left = pt.x + 20 + "px";
+    sailboat.style.top = clampedY + 10 + "px";
+    sailboat.style.transform = `rotate(${Math.sin(progress * Math.PI * 2) * 10}deg)`;
 
-    sailboat.style.top = `${pointAtLength.y - 23}px`;
-    sailboat.style.left = `${pointAtLength.x - 20}px`;
-
-    const rotation = Math.sin(progress * Math.PI * 4) * 12;
-    sailboat.style.transform = `rotate(${rotation}deg)`;
-  }
-
-  function fadeInSections() {
-    document.querySelectorAll(".fade-in").forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
-        el.classList.add("visible");
+    // Highlight the entry closest to the sailboat position
+    let nearest = 0,
+      best = Infinity;
+    pathPoints.forEach((p, i) => {
+      const dist = Math.abs(clampedY - p.y);
+      if (dist < best) {
+        best = dist;
+        nearest = i;
       }
     });
+    entries.forEach((e, i) => e.classList.toggle("active", i === nearest));
   }
 
+  updateSailboat();
+  window.addEventListener("scroll", updateSailboat);
+
+  // Fade-in and navigation highlight unchanged
+  const fadeEls = document.querySelectorAll(".fade-in");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = Array.from(navLinks).map((link) =>
+    document.querySelector(link.getAttribute("href"))
+  );
+
+  function fadeInSections() {
+    fadeEls.forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.85)
+        el.classList.add("visible");
+    });
+  }
   function highlightNav() {
     let scrollPos = window.scrollY + window.innerHeight / 3;
     sections.forEach((section, i) => {
@@ -40,35 +69,32 @@ document.addEventListener("DOMContentLoaded", () => {
         section.offsetTop <= scrollPos &&
         (i === sections.length - 1 || sections[i + 1].offsetTop > scrollPos)
       ) {
-        navLinks.forEach(link => link.classList.remove("active"));
+        navLinks.forEach((link) => link.classList.remove("active"));
         navLinks[i].classList.add("active");
       }
     });
   }
-
-  navLinks.forEach(link => {
-    link.addEventListener("click", e => {
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
-      const target = document.querySelector(link.getAttribute("href"));
-      target.scrollIntoView({ behavior: "smooth" });
+      document.querySelector(link.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
     });
   });
-
+  fadeInSections();
+  highlightNav();
   window.addEventListener("scroll", () => {
-    positionSailboat();
     fadeInSections();
     highlightNav();
   });
 
-  positionSailboat();
-  fadeInSections();
-  highlightNav();
-
-  // Demo form submission interception
+  // Contact form demo submit
   const form = document.querySelector(".contact-form");
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    alert("Message sent (demo)!");
-    form.reset();
-  });
+  if (form)
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Message sent! (demo)");
+      form.reset();
+    });
 });
