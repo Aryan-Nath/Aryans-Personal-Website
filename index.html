@@ -2,133 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aryan Nath</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-<header>
-  <nav class="navbar">
-    <div class="brand">Aryan Nath</div>
-    <ul class="nav-links">
-      <li><a href="#about" class="nav-link">About Me</a></li>
-      <li><a href="#career" class="nav-link">Career</a></li>
-      <li><a href="#education" class="nav-link">Education</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-<main>
-  <section id="about" class="section fade-in">
-    <h2 class="section-title">About Me</h2>
-    <p>
-      Hi, I'm Aryan Nath.<br>
-      I'm currently majoring in Data Science at UC San Diego, specializing in Machine Learning and Artificial Intelligence.
-      Passionate about systematic analysis, impactful research, and merging physiological and environmental data for better health outcomes.
-      I love sailing, data-driven discovery, and creative writing.
-    </p>
-    <img src="images/beach1.jpg" alt="Peaceful Beach" class="full-width-img">
+  <div class="background-grid"></div>
+  <header>
+    <nav>
+      <div class="nav-left">
+        <a href="/">Aryan Nath</a>
+      </div>
+      <div class="nav-right">
+        <a href="/#about" class="squiggle">About</a>
+        <a href="/#work">Work</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  
+  <section id="main">
+    <div class="main-text">
+      <h1>Aryan Nath</h1>
+      <p>Data Science at University of California, San Diego</p>
+    </div>
   </section>
-
-  <section id="career" class="section fade-in">
-    <h2 class="section-title">Career</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Research Assistant — Knight Lab, UCSD</h3>
-          <span class="career-dates">Mar 2025 - Jun 2025</span>
-          <p>Screened 50+ studies on 16S rRNA; processed samples with QIIME2 &amp; scikit‑bio; built Gut Microbiome database for Tree of Life project.</p>
-        </div>
+  
+  <section id="about">
+    <div class="description">
+      <h2>About</h2>
+      <p>
+        Hi, I'm Aryan Nath. I'm currently majoring in Data Science at UC San Diego, specializing in Machine Learning 
+        and Artificial Intelligence. Passionate about systematic analysis, impactful research, and merging physiological 
+        and environmental data for better health outcomes. I love sailing, data-driven discovery, and creative writing.   
+      </p>
+    </div>
+  </section>
+  
+  <section id="work">
+    <div class="works">
+      <h2>Work</h2>
+      <div class="work">
+        <h3>Research Assistant — Knight Lab, UCSD</h3>
+        <p>
+          Screened 50+ studies on 16S rRNA; processed samples with QIIME2 & scikit-bio; 
+          built Gut Microbiome database for Tree of Life project.
+        </p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Junior Quantitative Analyst — Hedge Fund Club UCSD</h3>
-          <span class="career-dates">Jan 2025 - Present</span>
-          <p>Built investment thesis for $1M simulated portfolio; analyzed 50+ companies using 10-Ks and DCF valuations; used Monte Carlo simulations to optimize returns.</p>
-        </div>
+      <div class="work">
+        <h3>Junior Quantitative Analyst — Hedge Fund Club UCSD</h3>
+        <p>
+          Built investment thesis for $1M simulated portfolio; analyzed 50+ companies using 10-Ks 
+          and DCF valuations; used Monte Carlo simulations to optimize returns.
+        </p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Quantitative Analyst — Sustainable Investment Group</h3>
-          <span class="career-dates">Mar 2025 - Present</span>
-          <p>Modeled NFLX returns with ARIMA+GARCH; linked ESG risks to valuation; presented buy-sell thesis with scenario analysis.</p>
-        </div>
+      <div class="work">
+        <h3>Quantitative Analyst — Sustainable Investment Group</h3>
+        <p>
+          Modeled NFLX returns with ARIMA+GARCH; linked ESG risks to valuation; presented 
+          buy-sell thesis with scenario analysis.
+        </p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <h3>Member — Physical Sciences Cohort Program</h3>
-          <span class="career-dates">Sept 2024 - Present</span>
-          <p>Selected for honors cohort with PhD mentors; developed research proposals.</p>
-        </div>
+      <div class="work">
+        <h3>Member — Physical Sciences Cohort Program</h3>
+        <p>
+          Selected for honors cohort with PhD mentors; developed research proposals.
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="education" class="section fade-in">
-    <h2 class="section-title">Education</h2>
-    <ul>
-      <li>
-        <strong>University of California, San Diego</strong><br>
-        Bachelor of Science in Data Science (Machine Learning Track)<br>
-        Provost Honors; GPA: 3.91/4.0; Expected Mar 2027
-      </li>
-      <li>Halıcıoğlu Data Science Institute Undergraduate Research Scholar (2025–2026)</li>
-    </ul>
-    <img src="images/education.jpg" alt="UCSD campus" class="full-width-img">
-  </section>
-
-  <section id="projects" class="section fade-in">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects-container">
-      <div class="project-card">
-        <h3>BioSync System</h3>
-        <p>Lead design of a platform syncing multimodal wearable data for health optimization.</p>
-      </div>
-      <div class="project-card">
-        <h3>Playlist to Podium</h3>
-        <p>Python pipeline cleaning 1.7M+ audio features; matched F1 driver profiles to user music.</p>
-      </div>
-      <div class="project-card">
-        <h3>Rise and Ruin</h3>
-        <p>Self-published historical fantasy novel available on Amazon.</p>
-      </div>
+  <section id="contact">
+    <div class="contact-form">
+      Contact
     </div>
   </section>
-
-  <section id="skills" class="section fade-in">
-    <h2 class="section-title">Skills</h2>
-    <ul>
-      <li>Python, Java, SQL</li>
-      <li>NumPy, Pandas, scikit-learn, PyTorch, XGBoost, Random Forests</li>
-      <li>Time Series Models: ARIMA, LSTM, TCN, GARCH</li>
-      <li>Contextual Bandits, Sequence Alignment, Fair Evaluation Splits</li>
-      <li>Research, Writing, Data Visualization</li>
-    </ul>
-  </section>
-
-  <section id="contact" class="section fade-in">
-    <h2 class="section-title">Contact</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="4" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-    <div class="contact-links">
-      <a href="mailto:aryan.nath@gmail.com">aryan.nath@gmail.com</a> |
-      <a href="https://linkedin.com/in/aryannath" target="_blank">LinkedIn</a>
-    </div>
-  </section>
-</main>
-<footer>
-  <p>&copy; 2025 Aryan Nath</p>
-</footer>
-<script src="script.js"></script>
+  
+  <footer>
+    <p>&copy; 2025 Aryan Nath</p>
+  </footer>
+  <script src="/static/js/blocks.js"></script>
 </body>
 </html>
